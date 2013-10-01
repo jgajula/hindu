@@ -1,0 +1,13 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home_wrapper {
+  background: #272727 url('/assets/hd_background.jpg') center top no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  color: white;
+  height: 768px;
+  text-align: center;
+  width: 100%;
+}

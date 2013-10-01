@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Hindu" %></title>
+    <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Hindu</a>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "Link1", "/path1"  %></li>
+              <li><%= link_to "Link2", "/path2"  %></li>
+              <li><%= link_to "Link3", "/path3"  %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container fullwidth">
+        <div class="row">
+            <%= yield %>
+        </div><!--/row-->
+
+      <footer>
+        <div class="container_footer">
+          <div class="row">
+            <div id="site-map" class="span9">
+              <table width="100%">
+                <thead>
+                <tr>
+                  <th>Divshot</th>
+                  <th>About</th>
+                  <th>Support</th>
+                  <th>Connect</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>
+                    <ul>
+                      <li><a href="/">Home</a></li>
+
+                      <li><a href="/pricing.html" data-placement="footer_pricing">Pricing</a></li>
+                      <li><a href="/blog/">Blog</a></li>
+                      <li><a href="http://docs.divshot.com">Support</a></li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li><a href="/about.html">About</a></li>
+                      <li><a href="/jobs.html">Jobs</a></li>
+                      <li><a href="/press.html">Press</a></li>
+                      <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                      <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li><a href="mailto:support@divshot.com">Contact Us</a></li>
+                      <li><a href="http://docs.divshot.com">Documentation</a></li>
+
+                    </ul>
+                  </td>
+                  <td>
+                    <div class="footersmicons"> <a href="https://www.facebook.com/pages/red-espresso/111499617168"> <img src="http://www.redespresso.com/wp-content/themes/redespresso/images/socialmedia/facebook.png" class="fb" alt="facebook"> </a> <a href="https://twitter.com/redespresso"> <img src="http://www.redespresso.com/wp-content/themes/redespresso/images/socialmedia/twitter.png" class="twitter" alt="twitter"> </a> <a href="https://plus.google.com/u/0/106144475301498738826/posts"> <img src="http://www.redespresso.com/wp-content/themes/redespresso/images/socialmedia/googleplus.png" class="gplus" alt="google plus"> </a> <a href="http://www.instagram.com/redespresso"> <img src="http://www.redespresso.com/wp-content/themes/redespresso/images/socialmedia/instagram.png" class="instagram" alt="instagram"> </a> <a href="http://www.youtube.com/user/redespressotv"> <img src="http://www.redespresso.com/wp-content/themes/redespresso/images/socialmedia/youtube.png" class="youtube" alt="youtube"> </a> </div>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="credits" class="span3">
+              <img class="glyph" width="32" src="/assets/lander/logo-glyph-06202e4eb3f1d63cf93e6a2f810cf838.svg">
+              <span id="copyright">© 2013 Divshot, Inc.</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

@@ -1,0 +1,236 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+.fullwidth {
+    width: 100%!important;
+}
+
+.play.top {
+    position: relative;
+    top: 95px;
+    left: 324px;
+    z-index: 2;
+    display: block;
+    width: 46px;
+    height: 46px;
+    opacity: 1;
+    background: url('/assets/play_top.png') 0 0 no-repeat;
+    background-size: 46px 46px;
+}
+
+.grid-row {
+    width: 960px;
+}
+
+.grid-row [class*="grid"] {
+    float: left;
+    margin-left: 20px;
+}
+.grid-3 {
+    width: 300px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+.big-icon-plane {
+    display: inline-block;
+    background: url('https://s3.amazonaws.com/jetstrap-site/images/website/index/what_icon.png') no-repeat transparent;
+    width: 123px;
+    height: 123px;
+}
+
+.big-icon-wrench {
+    display: inline-block;
+    background: url('https://s3.amazonaws.com/jetstrap-site/images/website/index/who_icon.png') no-repeat transparent;
+    width: 123px;
+    height: 123px;
+}
+
+.big-icon-heart {
+    display: inline-block;
+    background: url('https://s3.amazonaws.com/jetstrap-site/images/website/index/why_icon.png') no-repeat transparent;
+    width: 123px;
+    height: 123px;
+}
+
+.second_box_wrapper {
+    margin: auto;
+    width: 960px;
+    margin-top: 80px;
+}
+
+.grid-row {
+    text-align: center;
+}
+
+.hr {
+    background: url('/assets/divider_hr.jpg') no-repeat transparent 50% 50%;
+    width: 100%;
+    height: 1px;
+    margin: 15px 0px 60px 0px;
+}
+
+#index .details {
+    margin-bottom: 50px;
+}
+.wrapped-content {
+    width: 960px;
+    margin: auto;
+}
+
+#index .details .icons {
+    width: 120px;
+    text-align: center;
+}
+
+.l, .left {
+    float: left;
+}
+
+#index .details .icons .icon {
+    margin-bottom: 60px;
+}
+
+#index .details .highlight {
+    margin: 0px 62px;
+}
+
+#index .details .icons {
+    width: 120px;
+    text-align: center;
+}
+
+.featuresh2 {
+    font-weight: normal;
+    font-size: 22px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+#features {
+    text-align: center;
+}
+
+#newsletter {
+    text-align: center;
+}
+
+#newsletter .email-input {
+    width: 530px;
+    border: 1px solid #d5d5d5;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, .1);
+    width: 400px;
+    height: 25px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+.flat-blue-button {
+    font-family: 'ProximaNova-Bold';
+    background-image: none;
+    border: none;
+    background-color: #33a5c8;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    display: inline-block;
+    line-height: 20px;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 6px 15px 6px 15px;
+    text-shadow: none;
+    text-align: center;
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
+    transition: 0.1s linear;
+    -moz-transition: 0.1s linear;
+    -webkit-transition: 0.1s linear;
+}
+
+footer {
+    padding: 40px;
+}
+
+.container_footer {
+    margin-right: auto;
+    margin-left: auto;
+    width: 1170px;
+}
+
+footer thead th {
+    font-size: 12px;
+    color: #b4b4b4;
+    text-transform: uppercase;
+    text-align: left;
+    padding-bottom: 12px;
+}
+
+footer tbody td {
+    width: 200px;
+    vertical-align: top;
+}
+
+.footersmicons img {
+    background-color: #E1001A;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    -webkit-transition-property: font-size;
+    -moz-transition-property: font-size;
+    transition-property: font-size;
+    -webkit-transition-duration: 0.5s, 0.5s;
+    -moz-transition-duration: 0.5s, 0.5s;
+    transition-duration: 0.5s, 0.5s;
+}
+
+.footersmicons a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
