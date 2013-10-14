@@ -1,4 +1,12 @@
 Hindu::Application.routes.draw do
+  get "users/sign_up"
+
+  get "users/new"
+
+  post "users/create"
+
+  devise_for :users
+
   get "home/index"
 
   # The priority is based upon order of creation:
@@ -51,6 +59,8 @@ Hindu::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'home#index'
+
+
 
   # See how all your routes lay out with "rake routes"
 

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_id: 1
+  temple_id: 1
+  offering_date: 2013-10-12 12:44:32
+  paid: false
+  payment_id: 1
+  notes: MyText
+  status: MyString
+
+two:
+  customer_id: 1
+  temple_id: 1
+  offering_date: 2013-10-12 12:44:32
+  paid: false
+  payment_id: 1
+  notes: MyText
+  status: MyString

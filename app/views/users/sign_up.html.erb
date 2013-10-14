@@ -1,0 +1,88 @@
+<div class="sign_up_content_wrapper">
+
+  <div class="sign_up_content">
+
+        <%= form_for @user,remote:true, url: {action: "create"} do |u| %>
+            <div class="form_group">
+              <%=  u.label :email %>
+              <%= u.text_field :email %>
+              <div id="user_email_error"></div>
+            </div>
+
+            <div class="form_group">
+              <%=  u.label :password %>
+              <%=  u.password_field :password %>
+            </div>
+
+            <div class="form_group">
+              <%=  u.label :password_confirmation %>
+              <%=  u.password_field :password_confirmation %>
+            </div>
+
+            <div class="form-group">
+              <%=  u.label :zipcode %>
+              <%=  u.text_field :zipcode %>
+            </div>
+
+            <div class="form-group">
+              <%= u.check_box :toc %>
+              <%= u.label "I agree to Terms of Use and Privacy Policy"%>
+            </div>
+
+            <div class="form_group sign_up_submit_button">
+              <%= u.submit "Sign Up", :class=> 'btn btn-primary' %>
+            </div>
+
+        <% end %>
+
+  </div>
+
+
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+
+
+        $('#new_user').validate({
+            rules: {
+                "user[email]": { // should be: "user[email]"
+                    required: true,
+                    email: true
+                },
+                "user[password]": {
+                    required:true
+                },
+                "user[password_confirmation]": {
+                    required: true
+                },
+                "user[zipcode]": {
+                    required: true
+                }
+
+
+            },
+            messages: {
+                user_email: { // should be: "user[email]"
+                    required: "We need your email address to contact you",
+                    email: "Your email address must be in the format of name@domain.com"
+                },
+                user_password: {
+                    required: "password can not be blank"
+                },
+                user_password: {
+                    required: "please confirm your password"
+                },
+                user_zipcode: {
+                    required: "zipcode can not be blank"
+                }
+
+            }
+        });
+
+    });
+
+
+</script>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_charged: false
+  charged_money: 1.5
+  temple_money: 1.5
+  processing_fee: 1.5
+  service_charge: 1.5
+  cancelled: false
+  returned: false
+
+two:
+  customer_charged: false
+  charged_money: 1.5
+  temple_money: 1.5
+  processing_fee: 1.5
+  service_charge: 1.5
+  cancelled: false
+  returned: false
