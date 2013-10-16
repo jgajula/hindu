@@ -32,6 +32,11 @@ $(document).ready(function() {
         }
     });
 
+    $(".close").click(function(){
+        alert("asdf");
+        $('#sign_up_link').modal('hide')
+    });
+
 
 
 });

@@ -1,8 +1,10 @@
+<div class="modal_close"><a class="close" data-dismiss="modal">×</a></div>
+
 <div class="sign_up_content_wrapper">
 
   <div class="sign_up_content">
 
-        <%= form_for @user,remote:true, url: {action: "create"} do |u| %>
+        <%= form_for @user, validate:true, url: {action: "create"} do |u| %>
             <div class="form_group">
               <%=  u.label :email %>
               <%= u.text_field :email %>
@@ -30,7 +32,7 @@
             </div>
 
             <div class="form_group sign_up_submit_button">
-              <%= u.submit "Sign Up", :class=> 'btn btn-primary' %>
+              <%= u.submit "Sign Up", :class=> 'btn btn-primary',:onclick => "return validateform();" %>
             </div>
 
         <% end %>
@@ -43,6 +45,21 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
+        $("#user_zipcode").mask("99999");
+
+        jQuery.validator.addMethod("password", function( value, element ) {
+            var result = this.optional(element) || value.length >= 6 && /\d/.test(value) && /[a-z]/i.test(value);
+//            if (!result) {
+//                element.value = "";
+//                var validator = this;
+//                setTimeout(function() {
+//                    validator.blockFocusCleanup = true;
+//                    element.focus();
+//                    validator.blockFocusCleanup = false;
+//                }, 1);
+//            }
+            return result;
+        }, "Your password must be at least 6 characters long and contain at least one number and one character.");
 
 
 
@@ -52,37 +69,62 @@
                     required: true,
                     email: true
                 },
-                "user[password]": {
-                    required:true
-                },
-                "user[password_confirmation]": {
+
+                "user[zipcode]": {
                     required: true
                 },
-                "user[zipcode]": {
+                "user[password]": {
+                    required: true
+                },
+                "user[password_confirmation]": {
+                    required: true,
+                    equalTo: "#user_password"
+                },
+                "user[toc]": {
                     required: true
                 }
 
 
             },
             messages: {
-                user_email: { // should be: "user[email]"
+                "user[email]": { // should be: "user[email]"
                     required: "We need your email address to contact you",
                     email: "Your email address must be in the format of name@domain.com"
                 },
-                user_password: {
-                    required: "password can not be blank"
-                },
-                user_password: {
-                    required: "please confirm your password"
-                },
-                user_zipcode: {
-                    required: "zipcode can not be blank"
+                "user[toc]": {
+                    required: "You must agree to terms of use and privacy policy to register"
                 }
 
             }
         });
 
+
     });
+
+    function validateform(){
+
+        if($('.new_user').valid()){
+            $.ajax({
+                type: "POST",
+                url: $('.new_user').attr("action"),
+                data: $('.new_user').serialize(),
+                success: ajaxsuccess,
+                error: ajaxerror,
+                dataType: "json"
+            });
+            return false;
+        }
+       // alert('validate form');
+        //return false;
+    }
+
+    function ajaxsuccess(data, textStatus, jqXHR){
+        $( "div.sign_up_content" ).replaceWith( "<div class='sign_up_success'><h2>Thanks for registering!</h2><p>In few minutes you will receive an email with instructions on how to complete your registration</p></div>" );
+    }
+
+    function ajaxerror(data, textStatus, jqXHR){
+        $( "div.sign_up_content" ).replaceWith( "<div class='sign_up_error'><h2>Something went wrong</h2><p>We apologize for this inconvenience. Please try again later!</p></div>" );
+    }
 
 
 </script>

@@ -43,6 +43,7 @@
 
 
     <%= javascript_include_tag "application" %>
+    <% javascript_include_tag "jquery.maskedInput" %>
 
 
   </head>
@@ -70,7 +71,7 @@
                   Signed in as <%= current_user.email %>. Not you?
                   <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
               <% else %>
-                  <%= link_to "Sign up", new_user_registration_path, "data-toggle" => "modal" %> or <%= link_to "sign in", new_user_session_path, "data-toggle" => "modal" %>
+                  <%= link_to "Sign up", new_user_registration_path, "data-toggle" => "modal", :id => "sign_up_link" %> or <%= link_to "sign in", new_user_session_path, "data-toggle" => "modal" %>
               <% end %>
             </div>
           </div><!--/.nav-collapse -->
