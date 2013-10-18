@@ -48,8 +48,14 @@
 
   </head>
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if notice %>
+      <div class='alert alert-success'><a class='close' data-dismiss='alert'>x</a><%= notice %> </div>
+
+  <% end %>
+  <% if alert %>
+      <div class='alert alert-error'><a class='close' data-dismiss='alert'>x</a><%= alert %> </div>
+
+  <% end %>
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">

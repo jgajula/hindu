@@ -5,6 +5,8 @@ Hindu::Application.routes.draw do
 
   post "users/create"
 
+  get "users/confirm"
+
   devise_for :users
 
   get "home/index"

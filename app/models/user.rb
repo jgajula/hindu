@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   attr_accessible :email, :encrypted_password, :first_name, :gothram, :last_name, :status, :zipcode
 
   validates :email, presence:true
-  validates :password, presence:true
   validates :zipcode, presence:true
 
 end

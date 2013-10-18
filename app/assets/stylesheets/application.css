@@ -277,6 +277,22 @@ input[type="password"] {
     margin-top: 10px;
 }
 
+.alert-success {
+    text-align: center;
+    position: fixed;
+    z-index: 9999;
+    top: 50px;
+    right: 40%;
+}
+
+.alert-error{
+    text-align: center;
+    position: fixed;
+    z-index: 9999;
+    top: 50px;
+    right: 40%;
+}
+
 
 
 
