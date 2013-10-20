@@ -1,6 +1,10 @@
 Hindu::Application.routes.draw do
   get "users/sign_up"
 
+  #get "users/sign_in"
+
+  #get "users/verify"
+
   get "users/new"
 
   post "users/create"

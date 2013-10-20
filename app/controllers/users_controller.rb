@@ -11,7 +11,14 @@ class UsersController < ApplicationController
 
 
   def sign_in
+    @user = User.new
     render layout: false
+
+  end
+
+
+  def verify
+
 
   end
 

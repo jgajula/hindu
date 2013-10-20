@@ -1,0 +1,86 @@
+<div class="modal_close"><a class="close" data-dismiss="modal">×</a></div>
+
+<div class="sign_in_content_wrapper">
+
+  <div class="sign_in_content">
+
+    <%= form_for @user, validate:true, url: {action: new_user_session_path}, :html => {:class => "sign_in_form", :id => "sign_in_form"} do |u| %>
+        <div class="form_group">
+          <%=  u.label :email %>
+          <%= u.text_field :email %>
+          <div id="user_email_error"></div>
+        </div>
+
+        <div class="form_group">
+          <%=  u.label :password %>
+          <%=  u.password_field :password %>
+        </div>
+
+        <div class="form_group sign_in_submit_button">
+          <%= u.submit "Sign In", :class=> 'btn btn-primary',:onclick => "return validatesigninform();" %>
+        </div>
+
+    <% end %>
+
+  </div>
+
+
+</div>
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function(){
+
+        $('#sign_in_form').validate({
+            rules: {
+                "user[email]": { // should be: "user[email]"
+                    required: true,
+                    email: true
+                },
+                "user[password]": {
+                    required: true
+                }
+            },
+            messages: {
+                "user[email]": { // should be: "user[email]"
+                    required: "please enter a valid email address",
+                    email: "Your email address must be in the format of name@domain.com"
+                },
+                "user[password]": {
+                    required: "Please enter your password"
+                }
+            }
+        });
+
+
+    });
+
+    function validatesigninform(){
+
+        if($('.sign_in_form').valid()){
+            $.ajax({
+                type: "GET",
+                url: $('.sign_in_form').attr("action"),
+                data: $('.sign_in_form').serialize(),
+                success: signinsuccess,
+                error: signinerror,
+                dataType: "json"
+            });
+            return false;
+        }
+        // alert('validate form');
+        //return false;
+    }
+
+    function signinsuccess(data, textStatus, jqXHR){
+        windows.location.href = "/"
+    }
+
+    function signinerror(data, textStatus, jqXHR){
+        $( "div.sign_in_content" ).replaceWith( "<div class='sign_in_error'><h2>Something went wrong</h2><p>We apologize for this inconvenience. Please try again later!</p></div>" );
+    }
+
+
+</script>

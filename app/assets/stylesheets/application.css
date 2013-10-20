@@ -217,6 +217,11 @@ footer tbody td {
     margin-bottom: 25px;
 }
 
+.sign_in_content {
+    margin-left: 110px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
 
 input[type="text"] {
     margin: 0 0 14px!important;
@@ -246,7 +251,25 @@ input[type="password"] {
     border: 1px solid #d6d6d6!important;
 }
 
+input[type="email"] {
+    margin: 0 0 14px!important;
+    -webkit-border-radius: 5px!important;
+    -moz-border-radius: 5px!important;
+    border-radius: 5px!important;
+    font-size: 16px!important;
+    width: 324px!important;
+    height: 21px!important;
+    line-height: 24px!important;
+    padding: 7px 2px 7px 10px!important;
+    background-size: 25px 1px!important;
+    border: 1px solid #d6d6d6!important;
+}
+
 .sign_up_submit_button {
+    margin-left: 263px;
+}
+
+.sign_in_submit_button {
     margin-left: 263px;
 }
 
@@ -272,6 +295,18 @@ input[type="password"] {
     padding: 50px;
 }
 
+.sign_in_success {
+    height: 200px;
+    text-align: center;
+    padding: 50px;
+}
+
+.sign_in_error {
+    height: 200px;
+    text-align: center;
+    padding: 50px;
+}
+
 .modal_close {
     margin-right: 15px;
     margin-top: 10px;
@@ -291,6 +326,20 @@ input[type="password"] {
     z-index: 9999;
     top: 50px;
     right: 40%;
+}
+
+#user_remember_me {
+    float: left;
+    margin-right: 10px;
+}
+
+.sign_in_submit {
+    margin-left: 270px;
+    margin-top: -28px;
+}
+
+.server_error p {
+    color:red;
 }
 
 

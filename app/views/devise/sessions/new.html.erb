@@ -1,17 +1,106 @@
-<h2>Sign in</h2>
+    <div class="modal_close"><a class="close" data-dismiss="modal">×</a></div>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+    <div class="sign_in_content_wrapper">
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
-  <% end -%>
+        <div class="sign_in_content">
 
-  <div><%= f.submit "Sign in" %></div>
-<% end %>
+            <h2>Sign in</h2>
+            <div class="server_error"></div>
 
-<%= render "devise/shared/links" %>
+            <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => "sign_in_form"}) do |f| %>
+
+            <div class="form_group">
+
+                <%= f.label :email %>
+                <%= f.email_field :email, :autofocus => true %>
+                <div id="user_email_error"></div>
+            </div>
+
+
+            <div class="form_group">
+                <%= f.label :password %>
+                <%= f.password_field :password %>
+            </div>
+
+            <div class="form_group">
+                <% if devise_mapping.rememberable? -%>
+                    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+                <% end -%>
+            </div>
+
+            <div class="sign_in_submit">
+                <div><%= f.submit "Sign in", :class=> 'btn btn-primary',:onclick => "return validatesigninform();"  %></div>
+            </div>
+            <% end %>
+
+            <div class="sign_in_shared_links">
+                <%= render "devise/shared/links" %>
+            </div>
+        </div>
+
+    </div>
+
+<style>
+  footer {
+      display: none;
+  }
+</style>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            $('.sign_in_form').validate({
+                rules: {
+                    "user[email]": { // should be: "user[email]"
+                        required: true,
+                        email: true
+                    },
+                    "user[password]": {
+                        required: true
+                    }
+                },
+                messages: {
+                    "user[email]": { // should be: "user[email]"
+                        required: "We need your email address to contact you",
+                        email: "Your email address must be in the format of name@domain.com"
+                    },
+                    "user[password": {
+                        required: "please enter a valid password"
+                    }
+
+                }
+            });
+
+
+        });
+
+        function validatesigninform(){
+
+            if($('.sign_in_form').valid()){
+                $.ajax({
+                    type: "POST",
+                    url: $('.sign_in_form').attr("action"),
+                    data: $('.sign_in_form').serialize(),
+                    success: signinsuccess,
+                    error: signinerror,
+                    dataType: "json"
+                });
+                return false;
+            }
+            // alert('validate form');
+            //return false;
+        }
+
+        function signinsuccess(data, textStatus, jqXHR){
+            window.location = "/";
+        }
+
+        function signinerror(data, textStatus, jqXHR){
+            $( "div.server_error" ).replaceWith( "<div class='server_error'><p>Sorry, we could not recognize you, please try again!</p></div>" );
+        }
+
+
+    </script>
