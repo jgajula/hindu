@@ -342,6 +342,42 @@ input[type="email"] {
     color:red;
 }
 
+.featured_temples {
+    margin: auto;
+    width: 960px;
+    margin-top: 80px;
+}
+
+.featured_row {
+    clear: both;
+}
+
+.featured_left {
+    width: 50%;
+    float: left;
+}
+
+.featured_right {
+    width: 50%;
+    float: left;
+}
+
+.temple_title h3 {
+    color: #E68A00;
+}
+
+.temple_address {
+}
+
+.temple_phone {
+
+}
+
+.temple_image {
+    margin-bottom: 15px;
+    width: 60%;
+}
+
 
 
 
