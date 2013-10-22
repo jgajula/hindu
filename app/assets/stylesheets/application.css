@@ -378,6 +378,33 @@ input[type="email"] {
     width: 60%;
 }
 
+.right_most_temple {
+    margin-bottom: 100px;
+}
+
+.subscribe {
+    margin-top: -14px;
+    line-height: 14px;
+    margin-left: 10px;
+}
+
+.subscribe_div {
+    padding-top: 10px;
+}
+
+footer {
+    width: 960px;
+    margin: auto;
+    padding-bottom: 30px;
+    padding-top: 0px;
+}
+
+.footer_line {
+
+    margin: 0px;
+    padding-top: 25px;
+}
+
 
 
 
