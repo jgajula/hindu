@@ -18,6 +18,8 @@
 
 $(document).ready(function() {
 
+
+
 // Support for AJAX loaded modal window.
 // Focuses on first input textbox after it loads the window.
     $('[data-toggle="modal"]').click(function(e) {
@@ -28,9 +30,21 @@ $(document).ready(function() {
         } else {
             $.get(url, function(data) {
                 $('<div class="modal hide fade">' + data + '</div>').modal();
-            }).success(function() { $('input:text:visible:first').focus(); });
+            }).success(function() { $('input:text:visible:first').focus();
+
+                });
         }
     });
+
+    $("#video_thumbanil").click(function(){
+        $('.video_placeholder').html("<div class='video_iframe_wrapper'><iframe width='640' height='425' src='http://www.youtube.com/embed/NqsGoZ7eDDs?autoplay=1' frameborder='0' allowfullscreen></iframe></div>");
+
+    });
+
+    $(".video_popup_close").click(function(){
+        $(".video_iframe_wrapper").remove();
+    });
+
 
 
 

@@ -6,12 +6,10 @@
     <h2 class="proxima-regular" style="font-weight: normal; letter-spacing: 1px; margin: 0px; font-size: 22px;text-shadow: 0 0 10px rgba(0,0,0,.5);">
       Get connected with the God, offer pujas and archanas online
       <div class="bottom clearfix" style="width: 700px; margin: auto;">
-        <div class="videothumb" style=" margin-bottom: 76px;">
-          <span class="play top black"></span>
-          <span class="play bottom blue"></span>
-          <span class="image"><img src="http://images.apple.com/iphone/home/images/promo_5c_thumbnail.jpg" width="258" height="145" alt=""></span>
+        <div class="videothumb" id="video_thumbanil" style="margin-bottom: 76px;">
+          <span class="image"><a href="#video_section" data-toggle="modal" id="video_link"><img src="/assets/homepage_video_thumbanil_a.png" id="video_image"  width="258" height="145" alt=""></a></span>
         </div>
-        <a href="/plans" class="proxima-bold button get-started orange-gradient" style="
+        <a class="proxima-bold button get-started orange-gradient" href="/users/sign_up/" data-toggle="modal" style="
         color: #fff;
                 text-decoration: none !important; -moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px;
                 display: inline-block; font-size: 18px; letter-spacing: 3px; padding: 10px 22px; text-shadow: none !important;
@@ -121,6 +119,13 @@
 
   </div>
 
+    <section id="video_section" class="modal hide fade">
+      <div class="modal_close video_popup_close"><a class="close" data-dismiss="modal">×</a></div>
+      <div class="modal-body" id="video_modal_home">
+        <div class="video_placeholder"></div>
+      </div>
+    </section>
+
   <div id="newsletter">
     <div class="wrapped-content">
       <h2 class="proxima-bold">Sign up </h2>
@@ -128,7 +133,7 @@
       <div class="newsletter">
         <form action="http://codiqa.createsend.com/t/t/s/ckjuh/" method="post" id="subForm">
           <div class="subscribe_div">
-            <input type="text" name="cm-ckjuh-ckjuh" id="ckjuh-ckjuh" class="email-input" placeholder="Enter your email address"> <button class="flat-blue-button proxima-bold subscribe btn-large btn-primary">Sign Up</button>
+            <input type="text" name="home_email_input" id="home_email_input" class="email-input" placeholder="Enter your email address"> <button class="flat-blue-button proxima-bold subscribe btn btn-large btn-primary"><a href="/users/sign_up/" data-toggle="modal" id="sign_up_link_input">Sign Up</a></button>
           </div>
         </form>
       </div>

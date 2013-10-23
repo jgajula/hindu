@@ -405,6 +405,24 @@ footer {
     padding-top: 25px;
 }
 
+#sign_up_link_input {
+    color: white;
+    text-decoration: none;
+}
+
+#video_section {
+    width: 736px;
+}
+
+#video_modal_home {
+    max-height: 460px;
+}
+
+
+#video_thumbanil {
+    margin-top: 76px;
+}
+
 
 
 

@@ -45,6 +45,8 @@
 <script type="text/javascript">
 
     $(document).ready(function(){
+        $("#user_email").val($("#home_email_input").val());
+
         $("#user_zipcode").mask("99999");
 
         jQuery.validator.addMethod("password", function( value, element ) {
