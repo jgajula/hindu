@@ -423,6 +423,48 @@ footer {
     margin-top: 76px;
 }
 
+.temples_wrapper {
+    margin: auto;
+    width: 960px;
+}
+
+.temple_header h1{
+    color: #E68A00;
+    text-align: center;
+}
+
+.temple_header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.temple_body_wrapper {
+    clear: both;
+    padding-top: 50px;
+}
+
+.temple_inner_body {
+
+}
+
+.temple_left_nav {
+    width: 120px;
+    margin-right: 50px;
+}
+
+.temple_body {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    width: 750px;
+    min-height: 400px;
+    padding-left: 15px;
+}
+
+.temple_body h1{
+    text-align: center;
+}
+
+
 
 
 
